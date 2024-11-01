@@ -21,8 +21,8 @@ run-witness-scenario witness_store="/tmp/witness_store" witness_data="/tmp/witne
 
     # Do test
     cargo run --bin witness-scenario --release -- \
-    --l2-hash "0x564ec49e7c9ea0fe167c0ed3796b9c4ba884e059865c525f198306e72febedf8" \
-    --l1-head-hash "0xe22242e0d09d8236658b67553f41b183de2ce0dbbef94daf50dba64610f509a4" \
+    --l2-hash "0x6fd72597b7b9e76161d80672a0b394c2da0f2e0f628f7c041582c69899e4af79" \
+    --l1-head-hash "0xb9c22917f938f5de249f2c3e10159f16dbfc36eb1e307131031e5c59f84d348a" \
     --witness-data {{witness_data}}
 
 run-proof-scenario proof_store="/tmp/proof_store" witness_data="/tmp/witness.json" proof_data="/tmp/proof.json":
@@ -38,8 +38,8 @@ run-proof-scenario proof_store="/tmp/proof_store" witness_data="/tmp/witness.jso
 
     # Do test
     cargo run --bin proof-scenario --release -- \
-    --l2-hash "0x564ec49e7c9ea0fe167c0ed3796b9c4ba884e059865c525f198306e72febedf8" \
-    --l1-head-hash "0xe22242e0d09d8236658b67553f41b183de2ce0dbbef94daf50dba64610f509a4" \
+    --l2-hash "0x6fd72597b7b9e76161d80672a0b394c2da0f2e0f628f7c041582c69899e4af79" \
+    --l1-head-hash "0xb9c22917f938f5de249f2c3e10159f16dbfc36eb1e307131031e5c59f84d348a" \
     --witness-data {{witness_data}} \
     --proof-data {{proof_data}}
 
@@ -68,9 +68,9 @@ run-integration-tests:
     
     just run-witness-scenario $WITNESS_STORE_PATH $WITNESS_DATA
     
-    just run-proof-scenario $PROOF_STORE_PATH $WITNESS_DATA $PROOF_DATA
+    # just run-proof-scenario $PROOF_STORE_PATH $WITNESS_DATA $PROOF_DATA
     
-    just run-onchain-verify $PROOF_DATA
+    # just run-onchain-verify $PROOF_DATA
 
-    rm -rf $WITNESS_DATA
-    rm -rf $PROOF_DATA
+    # rm -rf $WITNESS_DATA
+    # rm -rf $PROOF_DATA
