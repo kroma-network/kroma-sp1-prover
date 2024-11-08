@@ -54,13 +54,21 @@ op-alloy-genesis = { git = "https://github.com/kroma-network/op-alloy.git", bran
 op-alloy-protocol = { git = "https://github.com/kroma-network/op-alloy.git", branch = "v0.4.0-kroma-patch-11-01", features = ["kroma"], default-features = false }
 
 # kona
-kona-primitives = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-executor = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-client = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-host = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-derive = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-mpt = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
-kona-providers = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-primitives = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-executor = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-client = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-host = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-derive = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-mpt = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+# kona-providers = { git = "https://github.com/kroma-network/kona", branch = "kroma-patch-11-01" }
+
+kona-primitives = { path = "../kona/crates/primitives" }
+kona-executor = { path = "../kona/crates/executor" }
+kona-client = { path = "../kona/bin/client" }
+kona-host = { path = "../kona/bin/host" }
+kona-derive = { path = "../kona/crates/derive" }
+kona-mpt = { path = "../kona/crates/mpt" }
+kona-providers = { path = "../kona/crates/providers" }
 
 # sp1
 sp1-zkvm = { version = "3.0.0", features = ["verify"] }
@@ -68,8 +76,10 @@ sp1-sdk = { version = "3.0.0" }
 sp1-build = { version = "3.0.0" }
 
 # op-succinct
-op-succinct-client-utils = { git = "https://github.com/kroma-network/op-succinct", branch = "kroma-patch-11-01" }
-op-succinct-host-utils = { git = "https://github.com/kroma-network/op-succinct", branch = "kroma-patch-11-01" }
+# op-succinct-client-utils = { git = "https://github.com/kroma-network/op-succinct", branch = "kroma-patch-11-01" }
+# op-succinct-host-utils = { git = "https://github.com/kroma-network/op-succinct", branch = "kroma-patch-11-01" }
+op-succinct-client-utils = { path = "../op-succinct/utils/client" }
+op-succinct-host-utils = { path = "../op-succinct/utils/host" }
 
 # kroma
 kroma-common = { path = "common" }

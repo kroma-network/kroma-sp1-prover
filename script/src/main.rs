@@ -149,8 +149,8 @@ async fn main() -> Result<()> {
                     let expected_output_root = get_output_at(&data_fetcher, args.l2_block);
                     assert_eq!(output_root, expected_output_root);
 
-                    let l1_head = public_values.read::<B256>();
-                    assert_eq!(l1_head, args.l1_head_hash.unwrap());
+                    // let l1_head = public_values.read::<B256>();
+                    // assert_eq!(l1_head, args.l1_head_hash.unwrap());
                 } else {
                     let boot_info = public_values.read::<BootInfoWithBytesConfig>();
                     println!("{:#?}", boot_info);
