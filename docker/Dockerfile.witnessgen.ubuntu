@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+WORKDIR /app
+
+COPY ./.env .
+COPY ./target/native_host_runner/release/native_host_runner .
+COPY ./target/release/witness-gen-server .
+COPY ./configs ./
+RUN mkdir -p target/release-client-lto/
+COPY ./target/release-client-lto/fault-proof target/release-client-lto/
+
+EXPOSE 3030
+CMD ["/bin/sh","-c","./witness-gen-server","--data","./witness_store"]
