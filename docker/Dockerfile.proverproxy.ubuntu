@@ -4,5 +4,5 @@ WORKDIR /app
 COPY ./.env .
 COPY ./target/release/prover-proxy .
 
-EXPOSE 3030
+EXPOSE 3031
 CMD ["/bin/sh","-c","./prover-proxy","--data","./prover_store"]
